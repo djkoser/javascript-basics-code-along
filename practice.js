@@ -502,9 +502,13 @@ let brakes = "TBD";
 // The currentSpeed variables will always be a string and will be changed during testing
 // The brakes variables will always be a boolean and will be changed during testing
 
-function setCrash(){
+
   // Code here
-};
+  function setCrash(){
+    if(currentSpeed==="fast" && brakes===false){
+      return crash=true;
+    }else{};
+    }
 
 
 
@@ -527,7 +531,13 @@ user = {
 
 // Code here
 
-
+function makePurchase(priceOfItem) {
+  if(priceOfItem<=user.total){
+    return user.total=user.total-priceOfItem;
+  }else if(priceOfItem>user.total){
+    return "not enough funds"
+  };
+  }
 
 //////////////////PROBLEM 34////////////////////
 
@@ -557,3 +567,13 @@ function sleep(){
 // The arguments passed into decisionMaker will always be true or false and will be changed during testing
 
 // Code here
+
+function decisionMaker (hungry,tired) {
+  if (hungry===true && tired===false){
+    return eat();
+  }else if (hungry===false && tired===true) {
+    return sleep();
+  }else{
+    return "undecided";
+  }
+}
